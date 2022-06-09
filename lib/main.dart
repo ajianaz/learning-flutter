@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:learn_flutter/fetch_data/main_fetch_data.dart';
-import 'package:learn_flutter/navigation_bottom/main_nav_bottom.dart';
-import 'package:learn_flutter/widget_communications/main_widget_communications.dart';
+import 'package:learn_flutter/screen/fetch_data/main_fetch_data.dart';
+import 'package:learn_flutter/screen/fetch_data_in_background/main_fetch_data_background.dart';
+import 'package:learn_flutter/screen/navigation_bottom/main_nav_bottom.dart';
+import 'package:learn_flutter/screen/widget_communications/main_widget_communications.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -50,6 +51,14 @@ class MyAppState extends State<MyApp> {
               actionTap: () {
                 onButtonTap(
                   MainFetchData(),
+                );
+              },
+            ),
+            MyMenuButton(
+              title: "Fetch Data In Background",
+              actionTap: () {
+                onButtonTap(
+                  MainFetchBackground(),
                 );
               },
             ),

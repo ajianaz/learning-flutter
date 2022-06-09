@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:learn_flutter/fetch_data/photo.dart';
+import 'package:learn_flutter/model/Photo.dart';
 
 class MainFetchData extends StatefulWidget {
   @override
