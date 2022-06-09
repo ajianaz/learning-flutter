@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:learn_flutter/fetch_data/main_fetch_data.dart';
 import 'package:learn_flutter/widget_communications/main_widget_communications.dart';
 
 void main() => runApp(MaterialApp(
@@ -36,6 +37,14 @@ class MyAppState extends State<MyApp> {
         child: ListView(
           children: <Widget>[
             MyMenuButton(
+              title: "Fetch Data JSON",
+              actionTap: () {
+                onButtonTap(
+                  MainFetchData(),
+                );
+              },
+            ),
+            MyMenuButton(
               title: "Communication Widgets",
               actionTap: () {
                 onButtonTap(
@@ -43,7 +52,6 @@ class MyAppState extends State<MyApp> {
                 );
               },
             ),
-            
           ],
         ),
       ),
