@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:learn_flutter/fetch_data/main_fetch_data.dart';
+import 'package:learn_flutter/navigation_bottom/main_nav_bottom.dart';
 import 'package:learn_flutter/widget_communications/main_widget_communications.dart';
 
 void main() => runApp(MaterialApp(
@@ -36,6 +37,14 @@ class MyAppState extends State<MyApp> {
         padding: EdgeInsets.all(15.0),
         child: ListView(
           children: <Widget>[
+            MyMenuButton(
+              title: "Navigation Bottom",
+              actionTap: () {
+                onButtonTap(
+                  MainNavBottom(),
+                );
+              },
+            ),
             MyMenuButton(
               title: "Fetch Data JSON",
               actionTap: () {
