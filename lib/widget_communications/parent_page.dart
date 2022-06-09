@@ -31,8 +31,8 @@ class ParentPageState extends State<ParentPage>
     with SingleTickerProviderStateMixin {
   TabController? _controller;
   String myTitle = "My Parent Title";
-  String? updateChild2title;
-  String? updateChild1title;
+  String? updateChild2Title;
+  String? updateChild1Title;
 
   @override
   void initState() {
@@ -45,13 +45,13 @@ class ParentPageState extends State<ParentPage>
 
   @override
   void dispose() {
-    _controller?.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 
   updateChild2(String text) {
     setState(() {
-      updateChild2title = text;
+      updateChild2Title = text;
     });
   }
 
@@ -65,7 +65,7 @@ class ParentPageState extends State<ParentPage>
   Widget build(BuildContext context) {
     return ParentProvider(
       tabController: _controller,
-      title: updateChild2title,
+      title: updateChild2Title,
       child: Column(
         children: [
           ListTile(
@@ -75,14 +75,16 @@ class ParentPageState extends State<ParentPage>
             ),
           ),
           ElevatedButton(
+            //Update Child 1 from Parent
             child: Text("Action 1"),
             onPressed: () {
               setState(() {
-                updateChild1title = "Update from parent";
+                updateChild1Title = "Update from Parent";
               });
             },
           ),
-          const TabBar(
+          TabBar(
+            controller: _controller,
             tabs: [
               Tab(
                 text: "First",
@@ -95,17 +97,18 @@ class ParentPageState extends State<ParentPage>
             ],
           ),
           Expanded(
-              child: TabBarView(
-            controller: _controller,
-            children: [
-              Child1Page(
-                title: updateChild1title,
-                child2Action2: updateParent,
-                child2Action3: updateChild2,
-              ),
-              Child2Page(),
-            ],
-          ))
+            child: TabBarView(
+              controller: _controller,
+              children: [
+                Child1Page(
+                  title: updateChild1Title,
+                  child2Action2: updateParent,
+                  child2Action3: updateChild2,
+                ),
+                Child2Page(),
+              ],
+            ),
+          )
         ],
       ),
     );

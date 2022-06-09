@@ -9,7 +9,7 @@ class MainWidgetCommunications extends StatelessWidget {
       data: ThemeData.dark(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Communication Widgets"),
+          title: Text("Widget Communications"),
         ),
         body: ParentPage(),
       ),
