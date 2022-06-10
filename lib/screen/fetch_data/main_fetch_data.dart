@@ -34,33 +34,35 @@ class MainFetchDataState extends State<MainFetchData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Fetch Data JSON"),
+      appBar: AppBar(
+        title: Text("Fetch Data JSON"),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ElevatedButton(
+          child: Text("Fetch Data"),
+          onPressed: fetchData,
         ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ElevatedButton(
-            child: Text("Fetch Data"),
-            onPressed: fetchData,
-          ),
-        ),
-        body: isLoading
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : ListView.builder(
-                itemCount: list.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    contentPadding: EdgeInsets.all(10.0),
-                    title: Text(list[index].title!),
-                    trailing: Image.network(
-                      list[index].thumbnailUrl!,
-                      fit: BoxFit.cover,
-                      height: 40.0,
-                      width: 40.0,
-                    ),
-                  );
-                }));
+      ),
+      body: isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  contentPadding: EdgeInsets.all(10.0),
+                  title: Text(list[index].title),
+                  trailing: Image.network(
+                    list[index].thumbnailUrl,
+                    fit: BoxFit.cover,
+                    height: 40.0,
+                    width: 40.0,
+                  ),
+                );
+              },
+            ),
+    );
   }
 }
