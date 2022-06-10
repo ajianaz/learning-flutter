@@ -8,24 +8,26 @@ class MainNavBottom extends StatefulWidget {
 }
 
 class MainNavBottomState extends State<MainNavBottom> {
+  String appBarTitle = "Navigation Bottom";
+
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Home',
+      'Home',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Business',
       style: optionStyle,
     ),
+    // Text(
+    //   'Index 2: School',
+    //   style: optionStyle,
+    // ),
     Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Settings',
+      ' Settings',
       style: optionStyle,
     ),
   ];
@@ -40,7 +42,7 @@ class MainNavBottomState extends State<MainNavBottom> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: _widgetOptions.elementAt(_selectedIndex),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
