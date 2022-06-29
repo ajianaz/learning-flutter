@@ -36,6 +36,8 @@ dependencies:
   http: any
   flutter_svg: ^0.22.0
   get: ^4.6.5
+  slide_to_confirm: ^1.1.0
+  printing: ^5.9.1
 
 dev_dependencies:
   flutter_test:

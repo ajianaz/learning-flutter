@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:learn_flutter/screen/fetch_data/main_fetch_data.dart';
 import 'package:learn_flutter/screen/fetch_data_in_background/main_fetch_data_background.dart';
 import 'package:learn_flutter/screen/navigation_bottom/main_nav_bottom.dart';
+import 'package:learn_flutter/screen/pdf_creator/pdf_creator_page.dart';
 import 'package:learn_flutter/screen/welcome_screen/welcome_screen.dart';
 import 'package:learn_flutter/screen/widget_communications/main_widget_communications.dart';
 
@@ -76,6 +77,14 @@ class MyAppState extends State<MyApp> {
               actionTap: () {
                 onButtonTap(
                   MainWidgetCommunications(),
+                );
+              },
+            ),
+            MyMenuButton(
+              title: "Pdf Creator",
+              actionTap: () {
+                onButtonTap(
+                  PdfCreatorPage(),
                 );
               },
             ),
